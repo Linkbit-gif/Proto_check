@@ -1,0 +1,443 @@
+<html>
+<head>
+<title>ExampleResourceTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #6a8759;}
+.s4 { color: #9876aa; font-style: italic;}
+.s5 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ExampleResourceTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package time.quark</span><span class="s1">;</span>
+
+<span class="s0">import io.quarkus.test.junit.QuarkusTest</span><span class="s1">;</span>
+<span class="s0">import org.junit.jupiter.api.Test</span><span class="s1">;</span>
+
+<span class="s0">import static io.restassured.RestAssured.given</span><span class="s1">;</span>
+<span class="s0">import static org.hamcrest.CoreMatchers.is</span><span class="s1">;</span>
+
+<span class="s1">@</span><span class="s0">QuarkusTest</span>
+<span class="s0">public class </span><span class="s2">ExampleResourceTest </span><span class="s1">{</span>
+
+    <span class="s1">@</span><span class="s0">Test</span>
+    <span class="s0">public void </span><span class="s2">testHelloEndpoint</span><span class="s1">() {</span>
+        <span class="s2">given</span><span class="s1">()</span>
+                <span class="s1">.</span><span class="s2">when</span><span class="s1">().</span><span class="s2">get</span><span class="s1">(</span><span class="s3">&quot;/hello&quot;</span><span class="s1">)</span>
+                <span class="s1">.</span><span class="s2">then</span><span class="s1">()</span>
+                <span class="s1">.</span><span class="s2">statusCode</span><span class="s1">(</span><span class="s4">200</span><span class="s1">)</span>
+                <span class="s1">.</span><span class="s2">body</span><span class="s1">(</span><span class="s2">is</span><span class="s1">(</span><span class="s3">&quot;&lt;!-- DTD for XML Schemas: Part 1: Structures 
+                               Public Identifier: &quot;</span><span class="s0">-</span><span class="s5">//W3C//DTD XMLSCHEMA 200102//EN&quot;</span>
+                               <span class="s1">Official </span><span class="s2">Location</span><span class="s0">: </span><span class="s1">http</span><span class="s0">:</span><span class="s5">//www.w3.org/2001/XMLSchema.dtd --&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">$Id</span><span class="s0">: </span><span class="s2">XMLSchema</span><span class="s1">.</span><span class="s2">dtd</span><span class="s1">,v </span><span class="s4">1.31 2001</span><span class="s0">/</span><span class="s4">10</span><span class="s0">/</span><span class="s4">24 15</span><span class="s0">:</span><span class="s4">50</span><span class="s0">:</span><span class="s4">16 </span><span class="s1">ht Exp $ </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">Note </span><span class="s2">this </span><span class="s1">DTD is NOT normative, or even definitive. </span><span class="s0">--&gt;           &lt;!--</span><span class="s1">d</span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">prose copy in the structures REC is the definitive version </span><span class="s0">--&gt;    &lt;!--</span><span class="s1">d</span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">(which shouldn</span><span class="s3">'t differ from this one except for this --&gt;         &lt;!--d--&gt; 
+                          &lt;!-- comment and entity expansions, but just in case) --&gt;              &lt;!--d--&gt; 
+                          &lt;!-- With the exception of cases with multiple namespace 
+                               prefixes for the XML Schema namespace, any XML document which is 
+                               not valid per this DTD given redefinitions in its internal subset of the 
+                               '</span><span class="s1">p</span><span class="s3">' and '</span><span class="s1">s</span><span class="s3">' parameter entities below appropriate to its namespace 
+                               declaration of the XML Schema namespace is almost certainly not 
+                               a valid schema. --&gt; 
+</span>
+                          <span class="s3">&lt;!-- The simpleType element and its constituent parts 
+                               are defined in XML Schema: Part 2: Datatypes --&gt; 
+                          &lt;!ENTITY % xs-datatypes PUBLIC '</span><span class="s1">datatypes</span><span class="s3">' '</span><span class="s2">datatypes</span><span class="s1">.</span><span class="s2">dtd</span><span class="s3">' &gt; 
+</span>
+                          <span class="s3">&lt;!ENTITY % p '</span><span class="s1">xs</span><span class="s0">:</span><span class="s3">'&gt; &lt;!-- can be overriden in the internal subset of a 
+                                                   schema document to establish a different 
+                                                   namespace prefix --&gt; 
+                          &lt;!ENTITY % s '</span><span class="s0">:</span><span class="s1">xs</span><span class="s3">'&gt; &lt;!-- if %p is defined (e.g. as foo:) then you must 
+                                                   also define %s as the suffix for the appropriate 
+                                                   namespace declaration (e.g. :foo) --&gt; 
+                          &lt;!ENTITY % nds '</span><span class="s1">xmlns</span><span class="s0">%</span><span class="s1">s;</span><span class="s3">'&gt; 
+</span>
+                          <span class="s3">&lt;!-- Define all the element names, with optional prefix --&gt; 
+                          &lt;!ENTITY % schema &quot;%p;schema&quot;&gt; 
+                          &lt;!ENTITY % complexType &quot;%p;complexType&quot;&gt; 
+                          &lt;!ENTITY % complexContent &quot;%p;complexContent&quot;&gt; 
+                          &lt;!ENTITY % simpleContent &quot;%p;simpleContent&quot;&gt; 
+                          &lt;!ENTITY % extension &quot;%p;extension&quot;&gt; 
+                          &lt;!ENTITY % element &quot;%p;element&quot;&gt; 
+                          &lt;!ENTITY % unique &quot;%p;unique&quot;&gt; 
+                          &lt;!ENTITY % key &quot;%p;key&quot;&gt; 
+                          &lt;!ENTITY % keyref &quot;%p;keyref&quot;&gt; 
+                          &lt;!ENTITY % selector &quot;%p;selector&quot;&gt; 
+                          &lt;!ENTITY % field &quot;%p;field&quot;&gt; 
+                          &lt;!ENTITY % group &quot;%p;group&quot;&gt; 
+                          &lt;!ENTITY % all &quot;%p;all&quot;&gt; 
+                          &lt;!ENTITY % choice &quot;%p;choice&quot;&gt; 
+                          &lt;!ENTITY % sequence &quot;%p;sequence&quot;&gt; 
+                          &lt;!ENTITY % any &quot;%p;any&quot;&gt; 
+                          &lt;!ENTITY % anyAttribute &quot;%p;anyAttribute&quot;&gt; 
+                          &lt;!ENTITY % attribute &quot;%p;attribute&quot;&gt; 
+                          &lt;!ENTITY % attributeGroup &quot;%p;attributeGroup&quot;&gt; 
+                          &lt;!ENTITY % include &quot;%p;include&quot;&gt; 
+                          &lt;!ENTITY % import &quot;%p;import&quot;&gt; 
+                          &lt;!ENTITY % redefine &quot;%p;redefine&quot;&gt; 
+                          &lt;!ENTITY % notation &quot;%p;notation&quot;&gt; 
+</span>
+                          <span class="s3">&lt;!-- annotation elements --&gt; 
+                          &lt;!ENTITY % annotation &quot;%p;annotation&quot;&gt; 
+                          &lt;!ENTITY % appinfo &quot;%p;appinfo&quot;&gt; 
+                          &lt;!ENTITY % documentation &quot;%p;documentation&quot;&gt; 
+</span>
+                          <span class="s3">&lt;!-- Customisation entities for the ATTLIST of each element type. 
+                               Define one of these if your schema takes advantage of the 
+                               anyAttribute='</span><span class="s1">##other</span><span class="s3">' in the schema for schemas --&gt; 
+</span>
+                          <span class="s3">&lt;!ENTITY % schemaAttrs ''&gt; 
+                          &lt;!ENTITY % complexTypeAttrs ''&gt; 
+                          &lt;!ENTITY % complexContentAttrs ''&gt; 
+                          &lt;!ENTITY % simpleContentAttrs ''&gt; 
+                          &lt;!ENTITY % extensionAttrs ''&gt; 
+                          &lt;!ENTITY % elementAttrs ''&gt; 
+                          &lt;!ENTITY % groupAttrs ''&gt; 
+                          &lt;!ENTITY % allAttrs ''&gt; 
+                          &lt;!ENTITY % choiceAttrs ''&gt; 
+                          &lt;!ENTITY % sequenceAttrs ''&gt; 
+                          &lt;!ENTITY % anyAttrs ''&gt; 
+                          &lt;!ENTITY % anyAttributeAttrs ''&gt; 
+                          &lt;!ENTITY % attributeAttrs ''&gt; 
+                          &lt;!ENTITY % attributeGroupAttrs ''&gt; 
+                          &lt;!ENTITY % uniqueAttrs ''&gt; 
+                          &lt;!ENTITY % keyAttrs ''&gt; 
+                          &lt;!ENTITY % keyrefAttrs ''&gt; 
+                          &lt;!ENTITY % selectorAttrs ''&gt; 
+                          &lt;!ENTITY % fieldAttrs ''&gt; 
+                          &lt;!ENTITY % includeAttrs ''&gt; 
+                          &lt;!ENTITY % importAttrs ''&gt; 
+                          &lt;!ENTITY % redefineAttrs ''&gt; 
+                          &lt;!ENTITY % notationAttrs ''&gt; 
+                          &lt;!ENTITY % annotationAttrs ''&gt; 
+                          &lt;!ENTITY % appinfoAttrs ''&gt; 
+                          &lt;!ENTITY % documentationAttrs ''&gt; 
+</span>
+                          <span class="s3">&lt;!ENTITY % complexDerivationSet &quot;CDATA&quot;&gt; 
+                                &lt;!-- #all or space-separated list drawn from derivationChoice --&gt; 
+                          &lt;!ENTITY % blockSet &quot;CDATA&quot;&gt; 
+                                &lt;!-- #all or space-separated list drawn from 
+                                                derivationChoice + '</span><span class="s1">substitution</span><span class="s3">' --&gt; 
+</span>
+                          <span class="s3">&lt;!ENTITY % mgs '</span><span class="s0">%</span><span class="s1">all; </span><span class="s0">| %</span><span class="s1">choice; </span><span class="s0">| %</span><span class="s1">sequence;</span><span class="s3">'&gt; 
+                          &lt;!ENTITY % cs '</span><span class="s0">%</span><span class="s1">choice; </span><span class="s0">| %</span><span class="s1">sequence;</span><span class="s3">'&gt; 
+                          &lt;!ENTITY % formValues '</span><span class="s1">(qualified</span><span class="s0">|</span><span class="s1">unqualified)</span><span class="s3">'&gt; 
+</span>
+
+                          <span class="s3">&lt;!ENTITY % attrDecls    '</span><span class="s1">((</span><span class="s0">%</span><span class="s1">attribute;</span><span class="s0">| %</span><span class="s1">attributeGroup;)</span><span class="s0">*</span><span class="s1">,(</span><span class="s0">%</span><span class="s1">anyAttribute;)</span><span class="s0">?</span><span class="s1">)</span><span class="s3">'&gt; 
+</span>
+                          <span class="s3">&lt;!ENTITY % particleAndAttrs '</span><span class="s1">((</span><span class="s0">%</span><span class="s1">mgs; </span><span class="s0">| %</span><span class="s1">group;)</span><span class="s0">?</span><span class="s1">, </span><span class="s0">%</span><span class="s1">attrDecls;)</span><span class="s3">'&gt; 
+</span>
+                          <span class="s3">&lt;!-- This is used in part2 --&gt; 
+                          &lt;!ENTITY % restriction1 '</span><span class="s1">((</span><span class="s0">%</span><span class="s1">mgs; </span><span class="s0">| %</span><span class="s1">group;)</span><span class="s0">?</span><span class="s1">)</span><span class="s3">'&gt; 
+</span>
+                          <span class="s3">%xs-datatypes; 
+</span>
+                          <span class="s3">&lt;!-- the duplication below is to produce an unambiguous content model 
+                               which allows annotation everywhere --&gt; 
+                          &lt;!ELEMENT %schema; ((%include; | %import; | %redefine; | %annotation;)*, 
+                                              ((%simpleType; | %complexType; 
+                                                | %element; | %attribute; 
+                                                | %attributeGroup; | %group; 
+                                                | %notation; ), 
+                                               (%annotation;)*)* )&gt; 
+                          &lt;!ATTLIST %schema; 
+                             targetNamespace      %URIref;               #IMPLIED 
+                             version              CDATA                  #IMPLIED 
+                             %nds;                %URIref;               #FIXED '</span><span class="s1">http</span><span class="s0">:</span><span class="s5">//www.w3.org/2001/XMLSchema'</span>
+                             <span class="s1">xmlns                CDATA                  #IMPLIED 
+                             finalDefault         </span><span class="s0">%</span><span class="s1">complexDerivationSet; </span><span class="s3">''</span>
+                             <span class="s1">blockDefault         </span><span class="s0">%</span><span class="s1">blockSet;             </span><span class="s3">''</span>
+                             <span class="s1">id                   ID                     #IMPLIED 
+                             elementFormDefault   </span><span class="s0">%</span><span class="s1">formValues;           </span><span class="s3">'unqualified'</span>
+                             <span class="s1">attributeFormDefault </span><span class="s0">%</span><span class="s1">formValues;           </span><span class="s3">'unqualified'</span>
+                             <span class="s1">xml</span><span class="s0">:</span><span class="s1">lang             CDATA                  #IMPLIED 
+                             </span><span class="s0">%</span><span class="s1">schemaAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">Note the xmlns declaration is NOT in the Schema </span><span class="s0">for </span><span class="s1">Schemas,</span>
+                               <span class="s1">because at the Infoset level where schemas operate,</span>
+                               <span class="s2">xmlns</span><span class="s1">(</span><span class="s0">:</span><span class="s1">prefix) is NOT an attribute</span><span class="s0">! --&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">The declaration of xmlns is a convenience </span><span class="s0">for </span><span class="s1">schema authors </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">The id attribute here and below is </span><span class="s0">for </span><span class="s1">use in external references 
+                               from non</span><span class="s0">-</span><span class="s1">schemas using simple fragment identifiers.</span>
+                               <span class="s1">It is NOT used </span><span class="s0">for </span><span class="s1">schema</span><span class="s0">-</span><span class="s1">to</span><span class="s0">-</span><span class="s1">schema reference, internal or 
+                               external. </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">a type is a named content type specification which allows attribute 
+                               declarations</span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- --&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">complexType; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">,</span>
+                                                   <span class="s1">(</span><span class="s0">%</span><span class="s1">simpleContent;</span><span class="s0">|%</span><span class="s1">complexContent;</span><span class="s0">|</span>
+                                                    <span class="s0">%</span><span class="s1">particleAndAttrs;))</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">complexType;</span>
+                                    <span class="s1">name      </span><span class="s0">%</span><span class="s1">NCName;                        #IMPLIED 
+                                    id        ID                              #IMPLIED 
+                                    </span><span class="s0">abstract  %boolean</span><span class="s1">;                       #IMPLIED 
+                                    </span><span class="s0">final     %</span><span class="s1">complexDerivationSet;          #IMPLIED 
+                                    block     </span><span class="s0">%</span><span class="s1">complexDerivationSet;          #IMPLIED 
+                                    </span><span class="s2">mixed </span><span class="s1">(</span><span class="s4">true</span><span class="s0">|</span><span class="s4">false</span><span class="s1">) </span><span class="s3">'false'</span>
+                                    <span class="s0">%</span><span class="s1">complexTypeAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">particleAndAttrs is shorthand </span><span class="s0">for </span><span class="s1">a root type </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">mixed is disallowed </span><span class="s0">if </span><span class="s1">simpleContent, overriden </span><span class="s0">if </span><span class="s1">complexContent 
+                               has one too. </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">If anyAttribute appears in one or more referenced attributeGroups 
+                               and</span><span class="s0">/</span><span class="s1">or explicitly, the intersection of the permissions is used </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">complexContent; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">restriction;</span><span class="s0">|%</span><span class="s1">extension;))</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">complexContent;</span>
+                                    <span class="s2">mixed </span><span class="s1">(</span><span class="s4">true</span><span class="s0">|</span><span class="s4">false</span><span class="s1">) #IMPLIED 
+                                    id    ID           #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">complexContentAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">restriction should use the branch defined above, not the simple 
+                               one from part2; extension should use the full model  </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">simpleContent; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">restriction;</span><span class="s0">|%</span><span class="s1">extension;))</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">simpleContent;</span>
+                                    <span class="s1">id    ID           #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">simpleContentAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">restriction should use the simple branch from part2, not the 
+                               one defined above; extension should have no particle  </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">extension; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">particleAndAttrs;))</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">extension;</span>
+                                    <span class="s1">base  </span><span class="s0">%</span><span class="s1">QName;      #REQUIRED 
+                                    id    ID           #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">extensionAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">an element is declared by either</span><span class="s0">:</span>
+                           <span class="s1">a name and a </span><span class="s2">type </span><span class="s1">(either nested or referenced via the type attribute)</span>
+                           <span class="s1">or a ref to an existing element declaration </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">element; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">complexType;</span><span class="s0">| %</span><span class="s1">simpleType;)</span><span class="s0">?</span><span class="s1">,</span>
+                                               <span class="s1">(</span><span class="s0">%</span><span class="s1">unique; </span><span class="s0">| %</span><span class="s1">key; </span><span class="s0">| %</span><span class="s1">keyref;)</span><span class="s0">*</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">simpleType or complexType only </span><span class="s0">if </span><span class="s1">no type</span><span class="s0">|</span><span class="s1">ref attribute </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">ref not allowed at top level </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">element;</span>
+                                      <span class="s1">name               </span><span class="s0">%</span><span class="s1">NCName;               #IMPLIED 
+                                      id                 ID                     #IMPLIED 
+                                      ref                </span><span class="s0">%</span><span class="s1">QName;                #IMPLIED 
+                                      type               </span><span class="s0">%</span><span class="s1">QName;                #IMPLIED 
+                                      minOccurs          </span><span class="s0">%</span><span class="s1">nonNegativeInteger;   #IMPLIED 
+                                      maxOccurs          CDATA                  #IMPLIED 
+                                      nillable           </span><span class="s0">%boolean</span><span class="s1">;              #IMPLIED 
+                                      substitutionGroup  </span><span class="s0">%</span><span class="s1">QName;                #IMPLIED 
+                                      </span><span class="s0">abstract           %boolean</span><span class="s1">;              #IMPLIED 
+                                      </span><span class="s0">final              %</span><span class="s1">complexDerivationSet; #IMPLIED 
+                                      block              </span><span class="s0">%</span><span class="s1">blockSet;             #IMPLIED 
+                                      </span><span class="s0">default            </span><span class="s1">CDATA                  #IMPLIED 
+                                      fixed              CDATA                  #IMPLIED 
+                                      form               </span><span class="s0">%</span><span class="s1">formValues;           #IMPLIED 
+                                      </span><span class="s0">%</span><span class="s1">elementAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">type and ref are mutually exclusive.</span>
+                               <span class="s1">name and ref are mutually exclusive, one is required </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">In the absence of type AND ref, type defaults to type of 
+                               substitutionGroup, </span><span class="s0">if </span><span class="s1">any, </span><span class="s0">else </span><span class="s1">the ur</span><span class="s0">-</span><span class="s1">type, </span><span class="s2">i</span><span class="s1">.</span><span class="s2">e</span><span class="s1">. </span><span class="s2">unconstrained </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- default </span><span class="s1">and fixed are mutually exclusive </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">group; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">,(</span><span class="s0">%</span><span class="s1">mgs;)</span><span class="s0">?</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">group;</span>
+                                    <span class="s1">name        </span><span class="s0">%</span><span class="s1">NCName;               #IMPLIED 
+                                    ref         </span><span class="s0">%</span><span class="s1">QName;                #IMPLIED 
+                                    minOccurs   </span><span class="s0">%</span><span class="s1">nonNegativeInteger;   #IMPLIED 
+                                    maxOccurs   CDATA                  #IMPLIED 
+                                    id          ID                     #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">groupAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">all; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">element;)</span><span class="s0">*</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">all;</span>
+                                    <span class="s2">minOccurs   </span><span class="s1">(</span><span class="s4">1</span><span class="s1">)                    #IMPLIED 
+                                    </span><span class="s2">maxOccurs   </span><span class="s1">(</span><span class="s4">1</span><span class="s1">)                    #IMPLIED 
+                                    id          ID                     #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">allAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">choice; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">element;</span><span class="s0">| %</span><span class="s1">group;</span><span class="s0">| %</span><span class="s1">cs; </span><span class="s0">| %</span><span class="s1">any;)</span><span class="s0">*</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">choice;</span>
+                                    <span class="s1">minOccurs   </span><span class="s0">%</span><span class="s1">nonNegativeInteger;   #IMPLIED 
+                                    maxOccurs   CDATA                  #IMPLIED 
+                                    id          ID                     #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">choiceAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">sequence; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">element;</span><span class="s0">| %</span><span class="s1">group;</span><span class="s0">| %</span><span class="s1">cs; </span><span class="s0">| %</span><span class="s1">any;)</span><span class="s0">*</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">sequence;</span>
+                                    <span class="s1">minOccurs   </span><span class="s0">%</span><span class="s1">nonNegativeInteger;   #IMPLIED 
+                                    maxOccurs   CDATA                  #IMPLIED 
+                                    id          ID                     #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">sequenceAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">an anonymous grouping in a model, or 
+                               a top</span><span class="s0">-</span><span class="s1">level named group definition, or a reference to same </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">Note that </span><span class="s0">if </span><span class="s1">order is </span><span class="s3">'all'</span><span class="s1">, group is not allowed inside.</span>
+                               <span class="s1">If order is </span><span class="s3">'all' </span><span class="s1">THIS group must be </span><span class="s2">alone </span><span class="s1">(or referenced alone) at 
+                               the top level of a content model </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">If order is </span><span class="s3">'all'</span><span class="s1">, minOccurs</span><span class="s0">==</span><span class="s1">maxOccurs</span><span class="s0">==</span><span class="s4">1 </span><span class="s1">on element</span><span class="s0">/</span><span class="s1">any inside </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">Should allow </span><span class="s2">minOccurs</span><span class="s0">=</span><span class="s4">0 </span><span class="s1">inside order</span><span class="s0">=</span><span class="s3">'all' </span><span class="s1">. . . </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">any; (</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">any;</span>
+                                      <span class="s1">namespace       CDATA                  </span><span class="s3">'##any'</span>
+                                      <span class="s2">processContents </span><span class="s1">(skip</span><span class="s0">|</span><span class="s1">lax</span><span class="s0">|</span><span class="s1">strict)      </span><span class="s3">'strict'</span>
+                                      <span class="s1">minOccurs       </span><span class="s0">%</span><span class="s1">nonNegativeInteger;   </span><span class="s3">'1'</span>
+                                      <span class="s1">maxOccurs       CDATA                  </span><span class="s3">'1'</span>
+                                      <span class="s1">id              ID                     #IMPLIED 
+                                      </span><span class="s0">%</span><span class="s1">anyAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">namespace is interpreted as follows</span><span class="s0">:</span>
+                                            <span class="s1">##any      </span><span class="s0">- - </span><span class="s1">any non</span><span class="s0">-</span><span class="s1">conflicting WFXML at all 
+</span>
+                                            <span class="s1">##other    </span><span class="s0">- - </span><span class="s1">any non</span><span class="s0">-</span><span class="s1">conflicting WFXML from namespace other 
+                                                            than targetNamespace 
+</span>
+                                            <span class="s1">##local    </span><span class="s0">- - </span><span class="s1">any unqualified non</span><span class="s0">-</span><span class="s1">conflicting WFXML</span><span class="s0">/</span><span class="s1">attribute 
+                                            one or     </span><span class="s0">- - </span><span class="s1">any non</span><span class="s0">-</span><span class="s1">conflicting WFXML from 
+                                            more URI        the listed namespaces 
+                                            references 
+</span>
+                                            <span class="s1">##targetNamespace ##local may appear in the above list,</span>
+                                              <span class="s1">with the obvious meaning </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">anyAttribute; (</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">anyAttribute;</span>
+                                      <span class="s1">namespace       CDATA              </span><span class="s3">'##any'</span>
+                                      <span class="s2">processContents </span><span class="s1">(skip</span><span class="s0">|</span><span class="s1">lax</span><span class="s0">|</span><span class="s1">strict)  </span><span class="s3">'strict'</span>
+                                      <span class="s1">id              ID                 #IMPLIED 
+                                      </span><span class="s0">%</span><span class="s1">anyAttributeAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">namespace is interpreted as </span><span class="s0">for </span><span class="s3">'any' </span><span class="s1">above </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">simpleType only </span><span class="s0">if </span><span class="s1">no type</span><span class="s0">|</span><span class="s1">ref attribute </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">ref not allowed at top level, name iff at top level </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">attribute; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, (</span><span class="s0">%</span><span class="s1">simpleType;)</span><span class="s0">?</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">attribute;</span>
+                                    <span class="s1">name      </span><span class="s0">%</span><span class="s1">NCName;      #IMPLIED 
+                                    id        ID            #IMPLIED 
+                                    ref       </span><span class="s0">%</span><span class="s1">QName;       #IMPLIED 
+                                    type      </span><span class="s0">%</span><span class="s1">QName;       #IMPLIED 
+                                    </span><span class="s2">use       </span><span class="s1">(prohibited</span><span class="s0">|</span><span class="s1">optional</span><span class="s0">|</span><span class="s1">required) #IMPLIED 
+                                    </span><span class="s0">default   </span><span class="s1">CDATA         #IMPLIED 
+                                    fixed     CDATA         #IMPLIED 
+                                    form      </span><span class="s0">%</span><span class="s1">formValues;  #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">attributeAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">type and ref are mutually exclusive.</span>
+                               <span class="s1">name and ref are mutually exclusive, one is required </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- default for </span><span class="s1">use is optional when nested, none otherwise </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- default </span><span class="s1">and fixed are mutually exclusive </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">type attr and simpleType content are mutually exclusive </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">an attributeGroup is a named collection of attribute decls, or a 
+                               reference thereto </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">attributeGroup; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">,</span>
+                                                 <span class="s1">(</span><span class="s0">%</span><span class="s1">attribute; </span><span class="s0">| %</span><span class="s1">attributeGroup;)</span><span class="s0">*</span><span class="s1">,</span>
+                                                 <span class="s1">(</span><span class="s0">%</span><span class="s1">anyAttribute;)</span><span class="s0">?</span><span class="s1">) </span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">attributeGroup;</span>
+                                           <span class="s1">name       </span><span class="s0">%</span><span class="s1">NCName;       #IMPLIED 
+                                           id         ID             #IMPLIED 
+                                           ref        </span><span class="s0">%</span><span class="s1">QName;        #IMPLIED 
+                                           </span><span class="s0">%</span><span class="s1">attributeGroupAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">ref iff no content, no </span><span class="s2">name</span><span class="s1">.  </span><span class="s2">ref </span><span class="s1">iff not top level </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">better reference mechanisms </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">unique; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, </span><span class="s0">%</span><span class="s1">selector;, (</span><span class="s0">%</span><span class="s1">field;)</span><span class="s0">+</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">unique;</span>
+                                    <span class="s1">name     </span><span class="s0">%</span><span class="s1">NCName;       #REQUIRED 
+                          	  id       ID             #IMPLIED 
+                          	  </span><span class="s0">%</span><span class="s1">uniqueAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">key;    ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, </span><span class="s0">%</span><span class="s1">selector;, (</span><span class="s0">%</span><span class="s1">field;)</span><span class="s0">+</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">key;</span>
+                                    <span class="s1">name     </span><span class="s0">%</span><span class="s1">NCName;       #REQUIRED 
+                          	  id       ID             #IMPLIED 
+                          	  </span><span class="s0">%</span><span class="s1">keyAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">keyref; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">, </span><span class="s0">%</span><span class="s1">selector;, (</span><span class="s0">%</span><span class="s1">field;)</span><span class="s0">+</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">keyref;</span>
+                                    <span class="s1">name     </span><span class="s0">%</span><span class="s1">NCName;       #REQUIRED 
+                          	  refer    </span><span class="s0">%</span><span class="s1">QName;        #REQUIRED 
+                          	  id       ID             #IMPLIED 
+                          	  </span><span class="s0">%</span><span class="s1">keyrefAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">selector; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">selector;</span>
+                                    <span class="s1">xpath </span><span class="s0">%</span><span class="s1">XPathExpr; #REQUIRED 
+                                    id    ID          #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">selectorAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">field; ((</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?</span><span class="s1">)</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">field;</span>
+                                    <span class="s1">xpath </span><span class="s0">%</span><span class="s1">XPathExpr; #REQUIRED 
+                                    id    ID          #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">fieldAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">Schema combination mechanisms </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">include; (</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">include;</span>
+                                    <span class="s1">schemaLocation </span><span class="s0">%</span><span class="s1">URIref; #REQUIRED 
+                                    id             ID       #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">includeAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">import; (</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">import;</span>
+                                    <span class="s1">namespace      </span><span class="s0">%</span><span class="s1">URIref; #IMPLIED 
+                                    schemaLocation </span><span class="s0">%</span><span class="s1">URIref; #IMPLIED 
+                                    id             ID       #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">importAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">redefine; (</span><span class="s0">%</span><span class="s1">annotation; </span><span class="s0">| %</span><span class="s1">simpleType; </span><span class="s0">| %</span><span class="s1">complexType; </span><span class="s0">|</span>
+                                                <span class="s0">%</span><span class="s1">attributeGroup; </span><span class="s0">| %</span><span class="s1">group;)</span><span class="s0">*&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">redefine;</span>
+                                    <span class="s1">schemaLocation </span><span class="s0">%</span><span class="s1">URIref; #REQUIRED 
+                                    id             ID       #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">redefineAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">notation; (</span><span class="s0">%</span><span class="s1">annotation;)</span><span class="s0">?&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">notation;</span>
+                          	  <span class="s1">name        </span><span class="s0">%</span><span class="s1">NCName;    #REQUIRED 
+                          	  id          ID          #IMPLIED 
+                          	  </span><span class="s0">public      </span><span class="s1">CDATA       #REQUIRED 
+                          	  system      </span><span class="s0">%</span><span class="s1">URIref;    #IMPLIED 
+                          	  </span><span class="s0">%</span><span class="s1">notationAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">Annotation is either application information or documentation </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!-- </span><span class="s1">By having these here they are available </span><span class="s0">for </span><span class="s1">datatypes as well 
+                               as all the structures elements </span><span class="s0">--&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">annotation; (</span><span class="s0">%</span><span class="s1">appinfo; </span><span class="s0">| %</span><span class="s1">documentation;)</span><span class="s0">*&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">annotation; </span><span class="s0">%</span><span class="s1">annotationAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!-- </span><span class="s1">User must define annotation elements in internal subset </span><span class="s0">for </span><span class="s2">this</span>
+                               <span class="s1">to work </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">appinfo; ANY</span><span class="s0">&gt;   &lt;!-- </span><span class="s1">too restrictive </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">appinfo;</span>
+                                    <span class="s1">source     </span><span class="s0">%</span><span class="s1">URIref;      #IMPLIED 
+                                    id         ID         #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">appinfoAttrs;</span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ELEMENT </span><span class="s0">%</span><span class="s1">documentation; ANY</span><span class="s0">&gt;   &lt;!-- </span><span class="s1">too restrictive </span><span class="s0">--&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">ATTLIST </span><span class="s0">%</span><span class="s1">documentation;</span>
+                                    <span class="s1">source     </span><span class="s0">%</span><span class="s1">URIref;   #IMPLIED 
+                                    id         ID         #IMPLIED 
+                                    xml</span><span class="s0">:</span><span class="s1">lang   CDATA      #IMPLIED 
+                                    </span><span class="s0">%</span><span class="s1">documentationAttrs;</span><span class="s0">&gt;</span>
+
+                          <span class="s0">&lt;!</span><span class="s1">NOTATION XMLSchemaStructures PUBLIC 
+                                     </span><span class="s3">'structures' 'http://www.w3.org/2001/XMLSchema.xsd' </span><span class="s0">&gt;</span>
+                          <span class="s0">&lt;!</span><span class="s1">NOTATION XML PUBLIC 
+                                     </span><span class="s3">'REC-xml-1998-0210' 'http://www.w3.org/TR/1998/REC-xml-19980210' </span><span class="s0">&gt;</span><span class="s3">&quot;)); 
+    } 
+</span>
+<span class="s3">}</span></pre>
+</body>
+</html>
