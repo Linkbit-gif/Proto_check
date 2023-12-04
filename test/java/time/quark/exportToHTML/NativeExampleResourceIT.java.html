@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>NativeExampleResourceIT.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #6a8759;}
+.s4 { color: #6a8759; font-style: italic;}
+.s5 { color: #9876aa; font-style: italic;}
+.s6 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+NativeExampleResourceIT.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package time.quark</span><span class="s1">;</span>
+
+<span class="s0">import io.quarkus.test.junit.NativeImageTest</span><span class="s1">;</span>
+<span class="s0">import org.junit.jupiter.api.Test</span><span class="s1">;</span>
+
+<span class="s1">@</span><span class="s0">NativeImageTest</span>
+<span class="s0">public class </span><span class="s2">NativeExampleResourceIT </span><span class="s0">extends </span><span class="s2">ExampleResourceTest </span><span class="s1">{</span>
+    <span class="s1">@</span><span class="s0">Test</span>
+    <span class="s0">void </span><span class="s2">hello</span><span class="s1">({</span>
+                 <span class="s3">&quot;title&quot;</span><span class="s0">: </span><span class="s3">&quot;JSON schema for SHARE_PROJECT_CONFIGURATION_FILES Functions Proxies proxies.json files&quot;</span><span class="s1">,</span>
+                 <span class="s3">&quot;$schema&quot;</span><span class="s0">: </span><span class="s3">&quot;http://json-schema.org/draft-04/schema#&quot;</span><span class="s1">,</span>
+                 <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                 <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                   <span class="s3">&quot;$schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;proxies&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The proxies object defines the proxies that will be used by the function app&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;&lt;ProxyName&gt;&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/proxy-schema&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Default template for a proxy. Replace </span><span class="s4">\&quot;</span><span class="s3">&lt;ProxyName&gt;</span><span class="s4">\&quot; </span><span class="s3">with a friendly name you wish to set.&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">:</span><span class="s1">{</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/proxy-schema&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A friendly name for the proxy&quot;</span>
+                     <span class="s1">}</span>
+                   <span class="s1">}</span>
+                 <span class="s1">},</span>
+                 <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">: </span><span class="s5">false</span><span class="s1">,</span>
+                 <span class="s3">&quot;required&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                   <span class="s3">&quot;proxies&quot;</span>
+                 <span class="s1">],</span>
+                 <span class="s3">&quot;definitions&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                   <span class="s3">&quot;proxy-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;desc&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;array&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;items&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                           <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span>
+                         <span class="s1">}</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;matchCondition&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/match-condition-schema&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Required - an object defining the requests that will trigger the execution of this proxy. It contains two properties shared with HTTP triggers - methods and route&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;backendUri&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The URL of the backend resource to which the request should be proxied. This value may be templated. If this property is not included, Azure Functions will respond with an HTTP 200 OK&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;requestOverrides&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/requestOverrides-schema&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The requestOverrides object defines changes made to the request when the backend resource is called. You can make changes to the method, and query string parameters.&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;responseOverrides&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/responseOverrides-schema&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The responseOverrides object defines changes made to the response passed back to the client. You can make changes to the response's status code, reason phrase, headers, and body.&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;debug&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;boolean&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;disabled&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;boolean&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;required&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                       <span class="s3">&quot;matchCondition&quot;</span>
+                     <span class="s1">],</span>
+                     <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">: </span><span class="s5">false</span><span class="s1">,</span>
+                     <span class="s3">&quot;default&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;matchCondition&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;route&quot;</span><span class="s0">: </span><span class="s3">&quot;&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;backendUri&quot;</span><span class="s0">: </span><span class="s3">&quot;&quot;</span>
+                     <span class="s1">}</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;match-condition-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;route&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Required - This defines the route template, controlling to which request URLs your proxy will respond. Unlike in HTTP triggers, there is no default value&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;methods&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;array&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;This is an array of the HTTP methods to which the proxy will respond. If not specified, the proxy will respond to all HTTP methods on the route.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;minItems&quot;</span><span class="s0">: </span><span class="s5">1</span><span class="s1">,</span>
+                         <span class="s3">&quot;items&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                           <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/http-method-schema&quot;</span>
+                         <span class="s1">},</span>
+                         <span class="s3">&quot;uniqueItems&quot;</span><span class="s0">: </span><span class="s5">true</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">: </span><span class="s5">false</span><span class="s1">,</span>
+                     <span class="s3">&quot;required&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                       <span class="s3">&quot;route&quot;</span>
+                     <span class="s1">]</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;requestOverrides-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;backend.request.method&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;This is the HTTP method which will be used to call the backend.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;anyOf&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                           <span class="s1">{</span>
+                             <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/http-method-schema&quot;</span>
+                           <span class="s1">},</span>
+                           <span class="s1">{</span>
+                             <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/request-overrides-value-expression-schema&quot;</span>
+                           <span class="s1">}</span>
+                         <span class="s1">]</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;backend.request.querystring.&lt;ParameterName&gt;&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A query string parameter which can be set for the call to the backend. Replace </span><span class="s4">\&quot;</span><span class="s3">&lt;ParameterName&gt;</span><span class="s4">\&quot; </span><span class="s3">with the name of the parameter you wish to set. If the empty string is provided, the parameter will not be included on the backend request&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/request-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;backend.request.headers.&lt;HeaderName&gt;&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A header which can be set for the call to the backend. Replace </span><span class="s4">\&quot;</span><span class="s3">&lt;HeaderName&gt;</span><span class="s4">\&quot; </span><span class="s3">with the name of the header you wish to set. If the empty string is provided, the header will not be included on the backend request.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/request-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;patternProperties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;^backend</span><span class="s4">\\</span><span class="s3">.request</span><span class="s4">\\</span><span class="s3">.querystring</span><span class="s4">\\</span><span class="s3">..+$&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A query string parameter which can be set for the call to the backend. Values can reference application settings and parameters from the original client request. If the empty string is provided, the parameter will not be included on the backend request&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/request-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;^backend</span><span class="s4">\\</span><span class="s3">.request</span><span class="s4">\\</span><span class="s3">.headers</span><span class="s4">\\</span><span class="s3">..+$&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A header which can be set for the call to the backend. Values can reference application settings, parameters from the original client request, and parameters from the backend response. If the empty string is provided, the header will not be included on the backend request.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/request-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">: </span><span class="s5">false</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;responseOverrides-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;properties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;response.statusCode&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The HTTP status code to be returned to the client.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/response-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;response.statusReason&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The HTTP reason phrase to be returned to the client.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/response-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;response.body&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;The string representation of the body to be returned to the client.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;anyOf&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                           <span class="s1">{ </span><span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot; </span><span class="s1">},</span>
+                           <span class="s1">{ </span><span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot; </span><span class="s1">},</span>
+                           <span class="s1">{</span>
+                             <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;array&quot;</span><span class="s1">,</span>
+                             <span class="s3">&quot;minItems&quot;</span><span class="s0">: </span><span class="s5">1</span><span class="s1">,</span>
+                             <span class="s3">&quot;items&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                               <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;object&quot;</span>
+                             <span class="s1">}</span>
+                           <span class="s1">}</span>
+                         <span class="s1">]</span>
+                       <span class="s1">},</span>
+                       <span class="s3">&quot;response.headers.&lt;HeaderName&gt;&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A header which can be set for the response to the client. Replace </span><span class="s4">\&quot;</span><span class="s3">&lt;HeaderName&gt;</span><span class="s4">\&quot; </span><span class="s3">with the name of the header you wish to set. If the empty string is provided, the header will not be included on the response.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/response-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;patternProperties&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                       <span class="s3">&quot;^response</span><span class="s4">\\</span><span class="s3">.headers</span><span class="s4">\\</span><span class="s3">..+$&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;A header which can be set for the response to the client. Values can reference application settings, parameters from the original client request, and parameters from the backend response. If the empty string is provided, the header will not be included on the response.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;$ref&quot;</span><span class="s0">: </span><span class="s3">&quot;#/definitions/response-overrides-value-expression-schema&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">},</span>
+                     <span class="s3">&quot;additionalProperties&quot;</span><span class="s0">: </span><span class="s5">false</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;request-overrides-value-expression-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;defaultSnippets&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Header&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read from one of the request headers&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.headers.&lt;HeaderName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Query String Parameter&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read one of the original request query string parameters&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.querystring.&lt;ParameterName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read the request method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.method}&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">]</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;response-overrides-value-expression-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;type&quot;</span><span class="s0">: </span><span class="s3">&quot;string&quot;</span><span class="s1">,</span>
+                     <span class="s3">&quot;defaultSnippets&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Response Header&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read from one of the backend response headers&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.response.headers.&lt;HeaderName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Response Status Code&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read the backend response status code.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.response.statusCode}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Response Status Reason&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read the backend response status reason.&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.response.statusReason}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Header&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read from one of the original request headers&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.headers.&lt;HeaderName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Query String&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read one of the original request query string parameters&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.querystring.&lt;ParameterName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Original Request Method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read the original request method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{request.method}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Request Header&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read from backend request headers&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.request.headers.&lt;HeaderName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Request Query String&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read one of the backend request query string parameters&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.request.querystring.&lt;ParameterName&gt;}&quot;</span>
+                       <span class="s1">},</span>
+                       <span class="s1">{</span>
+                         <span class="s3">&quot;label&quot;</span><span class="s0">: </span><span class="s3">&quot;Backend Request Method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;description&quot;</span><span class="s0">: </span><span class="s3">&quot;Read the backend request method&quot;</span><span class="s1">,</span>
+                         <span class="s3">&quot;body&quot;</span><span class="s0">: </span><span class="s3">&quot;{backend.request.method}&quot;</span>
+                       <span class="s1">}</span>
+                     <span class="s1">]</span>
+                   <span class="s1">},</span>
+                   <span class="s3">&quot;http-method-schema&quot;</span><span class="s0">: </span><span class="s1">{</span>
+                     <span class="s3">&quot;enum&quot;</span><span class="s0">: </span><span class="s1">[</span>
+                       <span class="s3">&quot;GET&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;POST&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;HEAD&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;OPTIONS&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;PUT&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;TRACE&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;DELETE&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;PATCH&quot;</span><span class="s1">,</span>
+                       <span class="s3">&quot;CONNECT&quot;</span>
+                     <span class="s1">]</span>
+                   <span class="s1">}</span>
+                 <span class="s1">}</span>
+               <span class="s1">}) {</span>
+    <span class="s1">}</span>
+
+    <span class="s6">// Execute the same tests but in native mode.</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
