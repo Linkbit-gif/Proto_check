@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "type": "myQueue",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "",
+      "databaseName": "",
+      "collectionName": "42",
+      "createLeaseCollectionIfNotExists": "true"
+    }
+  ]
+}
